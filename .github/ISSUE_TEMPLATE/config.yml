@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Submit a flag or join the class
+    url: https://github.com/kwaka1208/quests-hq-2025/issues/new/choose
+    about: フラグの提出と参加登録は、ここではなく HQ で行います。
