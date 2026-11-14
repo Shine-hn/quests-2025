@@ -1,0 +1,20 @@
+{
+  "title": "Quest 9: The Help Forum",
+  "stages": [
+    {
+      "question": "`forum/q-1042.md` を参考にして、`mapping.py` の `is_mapping()` を動くようにしてください。それから `python mapping.py` を実行します。表示される単語は？",
+      "answer_sha256": "8a62e967fcd6dfa5d75308c37808b4668a7faf1cdb06e09ac0a7161827603887"
+    },
+    {
+      "question": "`python export.py` を実行すると、エラーで止まります。エラーでフォーラムを検索し、`export.py` を直して、もう一度実行してください。表示される単語は？",
+      "answer_sha256": "647d177cca8601046a3cb39e12f55bec5790bfcbc42199dd5fcf063200fac1d0"
+    },
+    {
+      "question": "`forum/q-1500.md` を参考にして、`tickets.py` の `clean()` を動くようにしてください。それから `python tickets.py` を実行します。表示される単語は？",
+      "answer_sha256": "bb4c8eb92b6ec7b9055c94a397581544693c61da0f8f6cbb808681ccd0d9ce9b"
+    }
+  ],
+  "submit_url": "https://github.com/kwaka1208/quests-hq-2025/issues/new/choose",
+  "hub_name": "HQ",
+  "explanation": "MYq+ocnqLxj04iYl0SRBuxj+s/M92Ywn7I9NOSDE0Rn3FjCuPxAKwGbywGz1mHkrDLzyRRzY4NcBo5Ozo3TEDTFhwcGbH+fb3QmdRX0OXSOHBQEeqqahhthY18ZVDey0RrAUad6wEtjHd+RPM93SmLPbc8BaqXeLPuF9ZdpnmeReHrDsPFYB1mF7BOsY8XlRLCrVT2MkoOkFIdmSXkAyiU4CWf14D0r8PLDBiQfSd3ou6LlRrlnmMa9FvHy6Ooq4gKX6Tjh8+Nxj7ksvDnEDK81n0eFSJT/12wMP9cBFQBTpjzIN0SeTygGyUTVzILlNhvrpXJ5AzIHcSrShAq6fqX34Lqj9lPXgCN05y93sINrYxFccrrdIdLvV3+FpYSwXoqtWg8WNeNXDU7BCrdbKfg+HXPa8/psk41C9rvvTD+1Shv6AbsaWCeD6I4vUEYUeshd/NTeee6P9w4bZqEK+WJwG+0EOllB6J2Tau8PviExU8ebbfihikw72PbJ7vDXe2SZMjHPgzj4F3tY0chuQf2o2NqWk2pz231SIXJWZi+TUO76dWaeeWiL/K/A5FixgDv5eUKFu0/gqWhMgi1+5VNQX+KvEkhOni+5fRMVs9oqMg2ivAwzXKP1fYK8HSRFWriyZUAe57ON1gbXE7OqvWydkVHpe8mGeKARAARwtnK36b5jdOqxa+HZihaGupdVbGeglYdHzoc7j/Fpz66jeHDyliLhtZWMIprekc3TE1Wa/ZDNhqxsy1A9q9fXX8aEBnmtdd0cxnWiHG4AVDvd/UyT/2W4yjS3it5Yt3xb1eOWE9aZgUUb5VxZ74dRrJBlfx1dXKBt0jg9vK15nKOLkfa1FxSc1veED7qtwW8K6HOJix8ftPANW+zenxuLsCsYreqc15QU5SXYMO0snvdjXKEtl7ashp9S32VvSGs6930PO5PWnxXnYDf2zOpwxTmE4FIW0t0sAMy7SPuK9dBAwJ3KEv04epij6w0M6+Y+ifMbH7m3C4DBpBpUyvJBsXbK1RKZ420te2m7O5ilaqv4jDNdLcH/g759tUPKvfjzuXpL0HVv9nCmP9HISGKuzM3s/SHvBNbXfpfE9o1CcFGX16UrVHKQhQXKmq8PLQbPdmMWvB/GlrRki52ZeqaEj+0LfpQvRnrlHgi5eXLqYL0NerZi0iyBs6GK1n6A8yEG7phnJDaUkf0ykBEEr//6CJaAZ4a2DYTJDlItzxuzVyui3yN+hk3rIvDOtKm+hp7P5Hci9b6h67EUOt2cxPC5hPy43ei0PWvhRIJqu2yvBYo7L/ZEY5I21herZFtzrwBI4jJVLrXqT7AWWITAovQ5YkNabSrlbubM10R5U7kAAdR4svVBf7slWrt3UOoteCD54W/TqHNCLNXZVafQDpMHYOzjB5u2Kp291yP4G4mpSxRuMzHgiiPNcBZySuPfGhLJhlL3qXfwcRoOJR2gSWEIG+pzdmjNUEKM8XL0kVPkwFn0xz9kMVU4NIBmiTmtdVS50UrvtyLqI+8nBOYE98kTBDU9LM17XfASp8dGH+uI4VVurtJPAcmQEoRrUv5jCPqqKghn9EE8Mok+Kc956qLE7t2GKw7CZ8RoPE3fLf+wmR0uYiQM9ADtIX8HfIJ5wTlGq4cArZqEs5WvN+gzLAg88n0eYDaMn1U6q/uGn84h+IpK2npmftaAjZBTGwbt3U1VHj/Nej1BYnZ4l14o9IwdbGHsAzmwaK3s8AKVgakgnWhu6a6ndIJzC1TY5k84I4AwA+BPwEvPbdNufOq/8EoYYEIItiaD2YFV+FQRmsjUVUcUlX5pNkyemLfqaKX0maKDC2UKEatRCDgQ66zUrfjFNYESH837wu8WrOSr2K8f/KxfJEDpBWJisF+9s5hpDpi7S/VuSnVnOxMX5Ap0iMkOu6PJN9iqKazkEgY8CpytpZJQfwgVfmQ5JD36N+nj2UzlfhV3F565+do8sVD1gyqUvlV4/xCO4M0/zdGk4"
+}
