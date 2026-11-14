@@ -2,7 +2,7 @@
 
   python check.py --stage 1
   python check.py --stage 2
-  python check.py --stage 3     （あなたがクエスト置き場に出した、いちばん新しいプルリクエストをチェック）
+  python check.py --stage 3     （あなたが現場に出した、いちばん新しいプルリクエストをチェック）
 
 このチェッカーが確かめられるのは形だけです。英語のわかりやすさまではわかりません。
 「レビューする人が、diff を読む前にこの変更を理解できるか？」と自分に聞いてみましょう。
@@ -131,7 +131,7 @@ def fork_and_upstream(fork=None):
     if repo is None:
         sys.exit(f"{fork} が見つかりません。名前を確かめてください。")
     if not repo.get("parent"):
-        sys.exit(f"{fork} は fork ではありません。クエスト置き場の fork で実行してください。")
+        sys.exit(f"{fork} は fork ではありません。現場の fork で実行してください。")
     return fork.split("/")[0], repo["parent"]["full_name"]
 
 
