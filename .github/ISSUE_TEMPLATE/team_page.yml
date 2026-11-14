@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         タイトルの最後に、あなたの GitHub ID を足してください（例: `Add a team page for hana`）。
-        ここには**本名や学校の名前を書かないでください**。
+        ここには**本名や、学校・会社の名前を書かないでください**。
   - type: textarea
     id: request
     attributes:

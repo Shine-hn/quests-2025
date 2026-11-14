@@ -12,7 +12,7 @@
 - README のほかに、ファイルを1つ以上置きます（メモ、設定ファイル、小さな Python のプログラムなど）。
   答えは、そのファイルを読んだり実行したりして見つかるようにします
 - **答えの単語を、そのまま README に書かないでください**
-- 本名や学校の名前は書きません。ここは、だれでも読めます
+- 本名や、学校・会社の名前は書きません。ここは、だれでも読めます
 - 変えてよいのは、自分のフォルダ `welcome/YOUR-ID/` の中だけです
 
 Quest 0 を思い出してみましょう。Prerequisites、Usage、Troubleshooting、Note……。
@@ -36,7 +36,7 @@ Quest 0 を思い出してみましょう。Prerequisites、Usage、Troubleshoot
        git commit -m "feat: add a welcome quest by YOUR-ID"
        git push -u origin welcome-quest
 
-5. Quest 14 と同じように、元のクエスト置き場へプルリクエストを出します。
+5. Quest 14 と同じように、元の現場へプルリクエストを出します。
    この変更には Issue がないので、`Closes #` の行は消してかまいません。
    プルリクエストの自動チェックは、`TODO` が残っていると ❌ になります。書きかえて、同じブランチに push し直しましょう。
 
@@ -52,14 +52,14 @@ Quest 0 を思い出してみましょう。Prerequisites、Usage、Troubleshoot
 2. 授業で先生が示す組み合わせの表で、だれのクエストを遊ぶかを確かめます。
    そのクエストを、**README だけを頼りに**解きます。作った人に質問してはいけません。
 3. 答えがわかったら、作った人に直接伝えます。
-4. **Welcome quest feedback** のフォームで、元のクエスト置き場に Issue を出します。どこで迷ったかを英語で書きます。
+4. **Welcome quest feedback** のフォームで、元の現場に Issue を出します。どこで迷ったかを英語で書きます。
    **答えは書きません。**
 
    https://github.com/kwaka1208/quests-2025/issues/new/choose
 
 ## 第15回：届いた Issue に答える
 
-1. 元のクエスト置き場の Issue で、`welcome` のラベルの中から、自分のフォルダについての Issue を探します。
+1. 元の現場の Issue で、`welcome` のラベルの中から、自分のフォルダについての Issue を探します。
 2. まず、Issue にお礼と、どう直すかを英語でコメントします。
 3. README を直し、プルリクエストを出します。説明文には `Closes #N` を書きます。
 

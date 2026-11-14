@@ -75,7 +75,7 @@ If you think one of them has a problem, open an issue instead.
 ## Rules
 
 - **Do not post answers or flags** in issues or pull requests.
-- **Do not write private information**, such as your real name or your school.
+- **Do not write private information**, such as your real name, your school or your company.
   Everything here is public.
 - **You must understand your own change.** You may use translation tools or AI to help you,
   but you must be able to explain every line you changed. The maintainer may ask you about it.
