@@ -50,7 +50,8 @@ def structure_problems(text, name):
     summary = " ".join(line.strip() for line in intro if line.strip())
     if not summary:
         problems.append("タイトルの下に、関数が何をするかを1文で書いてください。")
-    elif "TODO" in summary:
+    # only TODO at the start of a line is left from the template; "no TODO" in a sentence is fine
+    elif any(re.match(r"\s*TODO\b", line) for line in intro):
         problems.append("タイトルの下の TODO を、関数が何をするかを書いた1文に置き換えてください。")
     else:
         if not summary[0].isupper():

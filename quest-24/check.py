@@ -54,10 +54,11 @@ def keywords_in(rule):
     return found
 
 
-def form_problems(text, minimum=5):
+def form_problems(text, minimum=5, example=True):
     problems = []
     first = next((l for l in text.splitlines() if l.strip()), "")
-    if not first.startswith("# ") or "TODO" in first:
+    # only TODO at the start of a line is left from the template; "no TODO" in a sentence is fine
+    if not first.startswith("# ") or re.match(r"#\s*TODO\b", first):
         problems.append("1行目に仕様書の名前を書いてください: '# ...'")
     if "RFC 2119" not in sections(text).get("Keywords", ""):
         problems.append("'## Keywords' に、キーワードを RFC 2119 のとおりに使うことを書いてください。")
@@ -75,7 +76,9 @@ def form_problems(text, minimum=5):
             problems.append(f"Rule {n}: キーワードはちょうど1つにしてください。いまは {len(found)} 個あります。2つの決まりに分けましょう。")
         if re.search(r"\b(must|should|may)\b", re.sub(r"`[^`]*`", "", rule)):
             problems.append(f"Rule {n}: キーワードは MUST のように大文字で書いてください。")
-    if "TODO" in text:
+    # the example is the work of stage 2, so stage 1 does not look at its TODO
+    checked = text if example else re.sub(r"^## Example\s*$.*?(?=^## |\Z)", "", text, flags=re.M | re.S)
+    if re.search(r"^[#\s]*TODO\b", checked, flags=re.M):
         problems.append("TODO をすべて置き換えてください。")
     return problems
 
@@ -120,7 +123,7 @@ def main():
     args = parser.parse_args()
 
     text = (HERE / "SPEC.md").read_text(encoding="utf-8")
-    problems = form_problems(text)
+    problems = form_problems(text, example=args.part == 2)
     if args.part == 2 and not problems:
         problems = content_problems(text)
 

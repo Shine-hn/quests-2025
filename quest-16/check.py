@@ -121,10 +121,11 @@ def parse(text):
 def bug_problems(text):
     title, s = parse(text)
     problems = []
-    if not title or "TODO" in title or len(title.split()) < 4:
+    # only TODO at the start of a line is left from the template; "no TODO" in a sentence is fine
+    if not title or re.match(r"TODO\b", title) or len(title.split()) < 4:
         problems.append("何が起きるかがわかるタイトルを書いてください（4語以上）。")
     for name in ("Steps to reproduce", "Expected", "Actual", "Environment"):
-        if not s.get(name) or "TODO" in s[name]:
+        if not s.get(name) or re.search(r"^\s*TODO\b", s[name], flags=re.M):
             problems.append(f"'## {name}' の節を書いてください。")
     if problems:
         return problems
@@ -150,7 +151,7 @@ def bug_problems(text):
 def commit_problems(text):
     first = text.strip().splitlines()[0] if text.strip() else ""
     m = re.match(r"^(?P<type>[a-z]+)(\([\w\-]+\))?!?: (?P<subject>.+)$", first)
-    if not first or "TODO" in first or not m:
+    if not first or re.match(r"TODO\b", first) or not m:
         return ["1行目を 'type: subject' の形にしてください。"]
     problems = []
     if m.group("type") != "fix":

@@ -40,12 +40,13 @@ def parse(text):
 
 def basic_problems(title, sections):
     problems = []
-    if not title or "TODO" in title:
+    # only TODO at the start of a line is left from the template; "no TODO" in a sentence is fine
+    if not title or re.match(r"TODO\b", title):
         problems.append("1行目にタイトルを書いてください: '# Your title'")
     for name in HEADINGS:
         if name not in sections:
             problems.append(f"見出し '## {name}' がありません。見出しを消したり、名前を変えたりしないでください。")
-        elif not sections[name] or "TODO" in sections[name]:
+        elif not sections[name] or re.search(r"^\s*TODO\b", sections[name], flags=re.M):
             problems.append(f"'## {name}' がまだ空です。TODO をあなたの文に置き換えてください。")
     return problems
 

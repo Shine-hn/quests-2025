@@ -29,19 +29,20 @@ def words(text):
 def form_problems(text, minimum=100):
     problems = []
     lines = [l for l in text.splitlines() if l.strip()]
-    if not lines or not lines[0].startswith("# ") or "TODO" in lines[0]:
+    # only TODO at the start of a line is left from the template; "no TODO" in a sentence is fine
+    if not lines or not lines[0].startswith("# ") or re.match(r"#\s*TODO\b", lines[0]):
         problems.append("1行目にタイトルを書いてください: '# ...'")
     tldr = next((l for l in lines[1:] if l.strip()), "")
     if not re.match(r"\**TL;DR:?\**", tldr.strip()):
         problems.append("タイトルのすぐ下に、TL;DR の行を書いてください: 'TL;DR: ...'")
-    elif "TODO" in tldr or len(words(tldr)) < 6:
+    elif re.match(r"\**TL;DR:?\**\s*TODO\b", tldr.strip()) or len(words(tldr)) < 6:
         problems.append("TL;DR を書いてください。話全体を、短い1〜2文で書きます。")
     elif len(words(tldr)) > 40:
         problems.append("TL;DR が長すぎます。40語以内にしてください。")
     headings = [l for l in lines if l.startswith("## ")]
-    if len(headings) < 2 or any("TODO" in h for h in headings):
+    if len(headings) < 2 or any(re.match(r"##\s*TODO\b", h) for h in headings):
         problems.append("'The problem' や 'What I did' のような見出し（'## ...'）を2つ以上書いてください。")
-    if "TODO" in text:
+    if re.search(r"^[#\s]*TODO\b", text, flags=re.M):
         problems.append("TODO をすべて置き換えてください。")
     body = strip("\n".join(l for l in text.splitlines() if not l.startswith("#")))
     count = len(words(body))

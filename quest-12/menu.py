@@ -20,4 +20,4 @@ def find_item(name):
 
 def print_menu():
     for name, price in MENU.items():
-        print(f"{name}: {price} dollars")
+        print(f"{name}: ${price:.2f}")

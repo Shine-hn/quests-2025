@@ -53,13 +53,16 @@ Python がエラーで止まると、**Traceback** を表示します。
     Traceback (most recent call last):
       File "start.py", line 3, in <module>
         main()
+        ~~~~^^
       File "start.py", line 2, in main
         open_door()
+        ^^^^^^^^^
     NameError: name 'open_door' is not defined
 
 - "most recent call last" は「最後の呼び出しがいちばん後」という意味です。いちばん新しい手順は**下**にあります
 - **最後の行**に、エラーの名前と短い説明があります
 - その上の行は、そこにたどり着くまでの道すじです
+- `~~~~^^` や `^^^^` の行は、その上のコードのどこが関係しているかを示す印です（Python 3.11 から）
 - Python 自身のファイル（たとえば `json/decoder.py`）を指す行もあります。問題はたいていそこにはありません。このフォルダのファイルを探しましょう
 
 つまり、Traceback は**下から上へ**読みます。

@@ -52,7 +52,7 @@ def comment_problems(label, text, where):
 
 def form_problems(decision, comments, lines):
     problems = []
-    if not decision or "TODO" in decision:
+    if not decision or re.match(r"TODO\b", decision):
         problems.append("1行目に判断を書いてください: 'Decision: Approve'、'Comment'、'Request changes' のどれか")
     elif decision not in DECISIONS:
         problems.append(f"判断は次のどれかにしてください: {', '.join(DECISIONS)}")
@@ -135,12 +135,13 @@ def part3(number, fork=None):
     problems = []
     if not texts:
         problems.append(f"{me} さんのレビューが見つかりません。'Submit review' を押しましたか？")
-    labeled = [t for t in texts if re.match(r"(blocking|nit|question|optional)\s*:", t, flags=re.I)]
+    # a label in bold (**nit:** or **nit**:), as quest-17 shows it, counts too
+    labeled = [m for m in (re.match(r"[*_\s]*(blocking|nit|question|optional)[*_]*\s*:[*_]*(.*)", t, flags=re.I | re.S)
+                           for t in texts) if m]
     if len(labeled) < 2:
         problems.append("ラベル（blocking:、nit:、question:、optional:）で始まるコメントを2つ以上書いてください。")
-    for i, t in enumerate(labeled, 1):
-        label = t.split(":", 1)[0].lower()
-        problems += comment_problems(label, t.split(":", 1)[1], f"comment {i}")
+    for i, m in enumerate(labeled, 1):
+        problems += comment_problems(m.group(1).lower(), m.group(2), f"comment {i}")
     return problems
 
 

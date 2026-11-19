@@ -27,7 +27,7 @@ WORDS = {1: "YmFubmVy", 2: "Ymx1ZXByaW50", 3: "ZGVidXQ="}
 
 def title_problems(title, need_type=None):
     """The same rules as commit messages: 'type: subject'."""
-    if not title or "TODO" in title:
+    if not title or re.match(r"TODO\b", title):
         return ["1行目にタイトルを書いてください。例: '# fix: stop the crash when the bag is full'"]
     m = PATTERN.match(title)
     if not m:
@@ -68,7 +68,8 @@ def parse(text):
 def body_problems(sections, files=None, issue=None):
     problems = []
     for name in HEADINGS:
-        if not sections.get(name) or "TODO" in sections[name]:
+        # only a line that starts with TODO (as in pr.md) is left from the template; "no TODO" in a sentence is fine
+        if not sections.get(name) or re.search(r"^\s*TODO\b", sections[name], flags=re.M):
             problems.append(f"'## {name}' の節を書いてください。（`<!-- -->` のコメントの中に書いた文は数えません）")
     if problems:
         return problems
