@@ -30,7 +30,7 @@ Haruka は、画面から目を離さずに言った。
 | --- | --- |
 | `find_person.py` | Daiki が昔書いたスクリプト。`phonebook` ライブラリを使う（ステージ2・3） |
 | `phonebook/` | `phonebook` ライブラリ |
-| `docs/` | `phonebook` のドキュメント。`docs/index.md` から読み始める |
+| `docs/` | `phonebook` のドキュメント。`docs/index.md` から読み始める。Web サイトでも読める（下の「ステージ2・3」） |
 | `staff.book` | 社員の電話帳 |
 | `old.book` | とても古い電話帳 |
 
@@ -84,6 +84,10 @@ Daiki は何年も前に `find_person.py` を書きました。今はもう動�
 **自分が使っているのはどのバージョンか。このページはどのバージョンのものか。**
 
 `docs/index.md` を開いて、そこから読み始めましょう。
+
+同じドキュメントは、Northwind の Web サイトでも読めます。中身はフォルダと同じなので、読みやすいほうを使ってください。
+
+https://kwaka1208.github.io/northwind-developers/docs/phonebook/
 
 ## 困ったとき
 

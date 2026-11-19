@@ -34,8 +34,8 @@ Misaki と目が合った。
 | `beta.json`、`staging.json` | 1 | サーバーの設定 |
 | `menu_sync.py` | 2 | メニューを同期する。**このファイルを直します** |
 | `kitchen/` | 2 | `kitchen` ライブラリ。編集しない |
-| `docs/` | 2 | `kitchen` のドキュメント |
-| `forum/` | 2 | Northwind Answers の質問 |
+| `docs/` | 2 | `kitchen` のドキュメント。Web サイトでも読める（https://kwaka1208.github.io/northwind-developers/docs/kitchen/） |
+| `forum/` | 2 | Northwind Answers の質問。Web サイトでも読める（https://kwaka1208.github.io/northwind-developers/answers/） |
 | `issues/` | 3 | Issue が3つ |
 | `pr-61.md`、`pr-61.diff` | 3 | マージ済みのプルリクエスト |
 | `prices.py` | 3 | 値段。**このファイルを直します** |
