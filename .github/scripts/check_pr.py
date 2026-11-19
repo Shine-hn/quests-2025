@@ -99,7 +99,12 @@ def main():
         with open(summary, "a", encoding="utf-8") as f:
             f.write("## プルリクエストのチェック\n\n" + "\n".join(lines) + "\n")
     if failed:
-        print("\n上の問題を直して、同じブランチに push してください。チェックがもう一度動きます。")
+        tips = []
+        if results[0][1]:  # the title can be fixed with Edit on GitHub; no push is needed
+            tips.append("タイトルは、プルリクエストの画面の Edit で直してください。")
+        if any(problems for _, problems in results[1:]):
+            tips.append("ファイルは、直して同じブランチに push してください。")
+        print("\n" + "".join(tips) + "直すと、チェックがもう一度動きます。")
         sys.exit(1)
 
 
